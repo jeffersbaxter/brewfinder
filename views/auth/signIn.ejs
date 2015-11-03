@@ -1,9 +1,17 @@
-<form action="" method="POST" role="form">
-	<legend>Form title</legend>
-
+<form action="/auth/signIn" method="POST" role="form">
+	<legend>Sign In</legend>
+<!-- 
 	<div class="form-group">
-		<label for="">label</label>
-		<input type="text" class="form-control" id="" placeholder="Input field">
+		<label for="name">Enter name</label>
+		<input type="text" class="form-control" id="name" placeholder="full name">
+	</div> -->
+	<div class="form-group">
+		<label for="email">Enter email</label>
+		<input type="email" class="form-control" id="email" placeholder="email" name="email">
+	</div>
+	<div class="form-group">
+		<label for="password">Create Password</label>
+		<input type="password" class="form-control" id="password" placeholder="password" name="password">
 	</div>
 
 	
