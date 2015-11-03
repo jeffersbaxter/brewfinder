@@ -7,6 +7,8 @@ var session = require('express-session');
 var passport = require('passport');
 var strategies = require('./config/strategies');
 var db = require('./models');
+var assert = require('assert');
+var env = require('node-env-file');
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -26,6 +28,7 @@ passport.serializeUser(strategies.serializeUser);
 passport.deserializeUser(strategies.deserializeUser);
 
 passport.use(strategies.localStrategy);
+
 
 app.set("view engine", "ejs");
 

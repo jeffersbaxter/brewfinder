@@ -1,0 +1,12 @@
+<div class="text-center">
+	<h1>Results for "<%= q %>"</h1>
+
+	<%	products.forEach(function(product) { %>
+	<div class="well">
+		<a href="#"><%= product.name %></a>
+		<p><%= product.description %></p>
+	</div>
+
+	<%	}); %>
+
+</div>

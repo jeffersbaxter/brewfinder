@@ -7,7 +7,7 @@
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="bg-info">
 	<nav class="navbar navbar-default" role="navigation">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -30,6 +30,7 @@
 			<% } else { %>	
 			<p class="navbar-text">Signed in as <%= currentUser.name %></p>
 			<li><a href="/auth/signOut">Sign Out</a></li>
+			<li><a href="/search/index">Search</a></li>
 			<% } %>
 			</ul>
 <!-- 			<ul class="nav navbar-nav navbar-right"> -->
