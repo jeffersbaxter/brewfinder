@@ -55,10 +55,10 @@ app.get("/", function(req,res){
 	res.render("index");
 });
 
-
 app.use("/results", require("./controllers/result"));
 app.use('/auth', require('./controllers/auth'));
 app.use('/search', require('./controllers/search'));
+app.use("/likes", require("./controllers/like"));
 
 
 app.listen(3000);
