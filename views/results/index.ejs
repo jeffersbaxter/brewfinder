@@ -3,7 +3,7 @@
 
 	<%	products.forEach(function(product) { %>
 	<div class="well">
-		<a href="#"><%= product.name %></a>
+		<a href="<%= '/results/'+product.id %>"><%= product.name %></a>
 		<p><%= product.description %></p>
 	</div>
 
