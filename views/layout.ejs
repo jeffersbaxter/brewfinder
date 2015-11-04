@@ -4,12 +4,12 @@
 	<title>Brew Search</title>
 	<!-- Latest compiled and minified CSS & JS -->
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="../static/styles.css">
 	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/styles.css">
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-<body class="bg-danger">
+<body class="bckgrnd">
 	<nav class="navbar navbar-default" role="navigation">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -19,7 +19,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">Brew Search</a>
+			<a class="navbar-brand brewSearch" href="/">Brew Search</a>
 		</div>
 	
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,7 +32,7 @@
 			<% } else { %>	
 			<li><a href="/auth/signOut">Sign Out</a></li>
 			<li><a href="/search/index">Search</a></li>
-			<p class="navbar-text">Signed in as <%= currentUser.name %></p>
+			<p class="navbar-text userDisplay">Signed in as <%= currentUser.name %></p>
 			<% } %>
 			</ul>
 <!-- 			<ul class="nav navbar-nav navbar-right"> -->

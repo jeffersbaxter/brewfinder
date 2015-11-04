@@ -2,6 +2,24 @@
 	font-family: 'Playfair Display', serif;
 }
 
+.bckgrnd {
+	background-color: #9C2E2E;
+}
+
+legend {
+	color: white;
+}
+
+#heading {
+	color: white;
+}
+
+.brewSearch {
+	font-size: 32px;
+	font-weight: bold;
+}
+
 a {
 	font-size: 24px;
 }
+
