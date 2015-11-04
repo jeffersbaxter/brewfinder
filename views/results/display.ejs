@@ -4,7 +4,7 @@
 			<h1><%= product.data.name %></h1>
 			<p><%= product.data.description %></p><br /><br />
 			<% if (typeof product.data.labels !== 'undefined' && typeof product.data.labels.medium !== 'undefined') { %>
-			<img src="<%= pictureURL %>" class="img-thumbnail">
+			<img src="<%= product.data.labels.medium %>" class="img-thumbnail">
 			<% } %>
 		</div>
 	</div>
