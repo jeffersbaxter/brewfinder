@@ -12,6 +12,7 @@ var env = require('node-env-file');
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false}));
+app.use('/static', express.static(__dirname + '/static'));
 app.use(ejsLayouts);
 app.use(flash());
 

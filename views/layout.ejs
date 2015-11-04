@@ -3,6 +3,8 @@
 <head>
 	<title>Brew Search</title>
 	<!-- Latest compiled and minified CSS & JS -->
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="../static/styles.css">
 	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -28,9 +30,9 @@
 				<li><a href="/auth/signIn">Sign In</a></li>
 				<li><a href="/auth/signUp">Sign Up</a></li>
 			<% } else { %>	
-			<p class="navbar-text">Signed in as <%= currentUser.name %></p>
 			<li><a href="/auth/signOut">Sign Out</a></li>
 			<li><a href="/search/index">Search</a></li>
+			<p class="navbar-text">Signed in as <%= currentUser.name %></p>
 			<% } %>
 			</ul>
 <!-- 			<ul class="nav navbar-nav navbar-right"> -->
