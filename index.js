@@ -61,4 +61,4 @@ app.use('/search', require('./controllers/search'));
 app.use("/likes", require("./controllers/like"));
 
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
