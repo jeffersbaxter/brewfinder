@@ -5,6 +5,14 @@ var request = require('request');
 var router = express.Router();
 var logout = require('express-passport-logout');
 
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
 router.route('/signIn')
 	.get(function(req,res){
 		res.render('auth/signIn');
