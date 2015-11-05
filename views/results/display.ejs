@@ -1,6 +1,6 @@
 <div class="row text-center">
 	<div class="col-lg-9">
-		<div class="well well-lg">
+		<div class="well well-lg shadow">
 			<h1><%= product.data.name %></h1>
 			<p><%= product.data.description %></p><br /><br />
 			<% if (typeof product.data.labels !== 'undefined' && typeof product.data.labels.medium !== 'undefined') { %>
@@ -8,22 +8,29 @@
 			<% } %>
 		</div>
 	</div>
-	<div class="col-lg-3 well">
+	<div class="col-lg-3 well shadow">
 		<table class="table">
-			<h1>Table</h1>
+			<tr>
+				<td>IBU</td>
+				<td>ALC</td>
+			</tr>
+			<tr>
+				<td><%= product.data.ibu %></td>
+				<td><%= product.data.abv %></td>
+			</tr>
 		</table>
 	</div>
-</div>
-<div class="row container-fluid">
+	<div class="row container-fluid">
 
-	<form action="/likes" method="POST">
+		<form action="/likes" method="POST">
 
-		<input type="hidden" value="<%= product.data.id %>" name="apiId">
-		<input type="hidden" value="<%= product.data.name %>" name="name">
+			<input type="hidden" value="<%= product.data.id %>" name="apiId">
+			<input type="hidden" value="<%= product.data.name %>" name="name">
 
-		<input type="submit" class="btn btn-info" id="" value="Like <%= product.data.name %>?">
+			<input type="submit" class="btn btn-info" id="" value="Like <%= product.data.name %>?">
 
-	</form>
-	
+		</form>
+		
 
+	</div>
 </div>

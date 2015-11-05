@@ -23,7 +23,7 @@ router.route('/signIn')
 			} else {
 				req.flash('warning', 'An error ocurred');
 				// res.redirect('/auth/signIn');
-				res.render('auth/signIn');
+				res.redirect('/auth/signIn');
 			}
 		})(req,res);
 	});
