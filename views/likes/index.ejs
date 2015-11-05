@@ -1,3 +1,11 @@
 <div>
 	<h1>Likes</h1>
+
+	<% likes.forEach(function(like) { %>
+	<div class="well row">
+			<%= like.name %>
+	</div>
+	
+	<% }); %>
+
 </div>

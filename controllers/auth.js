@@ -14,6 +14,7 @@ router.route('/signIn')
 			if (user.id > 0 || user.id != false) {
 				req.login(user, function(err) {
 					if (err) throw err;
+					req.session.user = user.id;
 					req.flash('success', 'Thank you for logging in.');
 					res.redirect('/search/index');
 					console.log(err);
@@ -21,7 +22,7 @@ router.route('/signIn')
 			} else {
 				req.flash('warning', 'An error ocurred');
 				// res.redirect('/auth/signIn');
-				res.send('didnt work')
+				res.render('auth/signIn');
 			}
 		})(req,res);
 	});

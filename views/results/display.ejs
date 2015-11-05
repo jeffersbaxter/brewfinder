@@ -14,8 +14,16 @@
 		</table>
 	</div>
 </div>
-<div class="row">
-	<a class="btn btn-info" href="../likes/">Like <%= product.data.name %>?</a>
+<div class="row container-fluid">
+
+	<form action="/likes" method="POST">
+
+		<input type="hidden" value="<%= product.data.id %>" name="apiId">
+		<input type="hidden" value="<%= product.data.name %>" name="name">
+
+		<input type="submit" class="btn btn-info" id="" value="Like <%= product.data.name %>?">
+
+	</form>
 	
 
 </div>
