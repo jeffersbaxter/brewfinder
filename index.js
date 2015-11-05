@@ -33,20 +33,20 @@ passport.use(strategies.localStrategy);
 
 app.set("view engine", "ejs");
 
-app.use(function(req,res,next){
-	if (req.session.user) {
-		db.user.findById(req.session.user).then(function(user){
-			req.currentUser = user;
-			next();
-		});
-	} else {
-		req.currentUser = false;
-		next();
-	}
-});
+// app.use(function(req,res,next){
+// 	if (req.session.user) {
+// 		db.user.findById(req.session.user).then(function(user){
+// 			req.currentUser = user;
+// 			next();
+// 		});
+// 	} else {
+// 		req.currentUser = false;
+// 		next();
+// 	}
+// });
 
 app.use(function(req,res,next){
-	res.locals.currentUser = req.currentUser;
+	res.locals.currentUser = req.user;
 	res.locals.alerts = req.flash();
 	next();
 });

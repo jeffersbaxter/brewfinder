@@ -12,17 +12,16 @@ router.route('/signIn')
 	})
 	.post(function(req,res){
 		passport.authenticate('local', function(err, user, info){
-			if (user.id > 0 || user.id != false) {
+			if (user) {
 				req.login(user, function(err) {
 					if (err) throw err;
 					req.session.user = user.id;
-					req.flash('success', 'Thank you for logging in.');
+					// req.flash('success', 'Thank you for logging in.');
 					res.redirect('/search/index');
 					console.log(err);
 				});
 			} else {
-				req.flash('warning', 'An error ocurred');
-				// res.redirect('/auth/signIn');
+				req.flash('danger', 'An error ocurred');
 				res.redirect('/auth/signIn');
 			}
 		})(req,res);
