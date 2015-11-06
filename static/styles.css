@@ -10,7 +10,7 @@ legend {
 	color: white;
 }
 
-#heading {
+.heading {
 	color: white;
 }
 
@@ -32,4 +32,48 @@ a {
 label {
 	color: white;
 }
+
+.likes {
+	display: inline-block;
+	width: auto;
+	margin: 5px;
+}
+
+.mug {
+	font-size: 144px;
+}
+
+#glyph {
+	display: inline;
+/*	margin-right: 300px;*/
+	float: left;
+	padding-right: 10px; 
+}
+
+#indexContent {
+	display: inline;
+}
+
+.about {
+	color: white;
+	text-align: justify;
+	font-size: 18px;
+	padding-left: 10px;
+}
+
+.title {
+	font-size: 48px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

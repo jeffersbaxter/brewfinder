@@ -1,9 +1,15 @@
 <div>
-	<h1>Likes</h1>
+	<h1 class="heading">Likes</h1>
 
 	<% likes.forEach(function(like) { %>
-	<div class="well row">
-			<%= like.name %>
+	<div class="well well-sm row likes">
+			<h1><%= like.name %></h1>
+		<form action="" method="POST">
+
+
+			<input type="submit" class="btn btn-info pull-right" id="" value="Add a comment">
+
+		</form>
 	</div>
 	
 	<% }); %>

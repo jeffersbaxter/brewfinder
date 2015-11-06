@@ -10,16 +10,19 @@ var idURL = "http://api.brewerydb.com/v2/beer/";
 router.get('/', function(req,res){
 	var query = req.query.q;
 	// var type = req.query.type;
-	request(searchUrl+"q="+query+"&type=beer&key="+process.env.API_KEY, function(err, response, body){
-	// request(searchUrl+"q="+query+"&key="+process.env.API_KEY, function(err, response, body){
-		var data = JSON.parse(body);
-		res.render('results/index', {products: data.data, q: query});
-		// if (data.data) {
-		// 	res.render('results/index', {products: data.data});
-		// } else {
-		// 	res.render('error');
-		// }
-	});
+	if (req.session.user) {
+		request(searchUrl+"q="+query+"&type=beer&key="+process.env.API_KEY, function(err, response, body){
+		// request(searchUrl+"q="+query+"&key="+process.env.API_KEY, function(err, response, body){
+			var data = JSON.parse(body);
+			if (data.data) {
+				res.render('results/index', {products: data.data, q: query});
+			} else {
+				res.redirect('/search/index');
+			}
+		});
+	} else {
+		res.redirect('/');
+	}
 });
 
 router.get("/:id", function(req,res){

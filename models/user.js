@@ -24,6 +24,7 @@ module.exports = function(sequelize, DataTypes) {
         // associations can be defined here
         models.user.hasMany(models.provider);
         models.user.hasMany(models.like);
+        models.user.hasMany(models.comment);
       },
       authenticate: function(email, password, callback) {
         this.find({where: {email: email}}).then(function(user) {

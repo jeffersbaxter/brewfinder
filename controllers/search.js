@@ -13,18 +13,7 @@ router.get("/index", function(req,res){
 	}
 });
 
-router.get("/index", function(req,res){
-	var query = req.params.q;
-	request(searchUrl+"q="+query+"key="+process.env.API_KEY, function(err, response, body){
-		var data = JSON.parse(body);
-		res.send(data);
-		// if (data.data) {
-		// 	res.redirect('/results', {products: data.data});
-		// } else {
-		// 	res.render('error');
-		// }
-	});
-});
+
 
 
 module.exports = router;
