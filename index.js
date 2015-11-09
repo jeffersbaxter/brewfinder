@@ -33,17 +33,6 @@ passport.use(strategies.localStrategy);
 
 app.set("view engine", "ejs");
 
-// app.use(function(req,res,next){
-// 	if (req.session.user) {
-// 		db.user.findById(req.session.user).then(function(user){
-// 			req.currentUser = user;
-// 			next();
-// 		});
-// 	} else {
-// 		req.currentUser = false;
-// 		next();
-// 	}
-// });
 
 app.use(function(req,res,next){
 	res.locals.currentUser = req.user;
@@ -59,6 +48,12 @@ app.use("/results", require("./controllers/result"));
 app.use('/auth', require('./controllers/auth'));
 app.use('/search', require('./controllers/search'));
 app.use("/likes", require("./controllers/like"));
+
+app.use(function(req, res, next) {
+   res.status(404);
+   res.send('Status: 404 Page could not be found.');
+   next();
+});
 
 
 app.listen(process.env.PORT || 3000);

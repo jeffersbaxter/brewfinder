@@ -17,7 +17,7 @@ router.route('/signIn')
 					if (err) throw err;
 					req.session.user = user.id;
 					// req.flash('success', 'Thank you for logging in.');
-					res.redirect('/search/index');
+					res.redirect('/search');
 					console.log(err);
 				});
 			} else {
@@ -44,7 +44,7 @@ router.post('/signUp', function(req,res){
 				req.login(user, function(err) {
 					if (err) throw err;
 					req.flash('success', 'Welcome!');
-					res.redirect('/search/index');
+					res.redirect('/search');
 				});
 			} else {
 				req.flash('warning', 'User already exists');

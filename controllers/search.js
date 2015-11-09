@@ -5,7 +5,7 @@ var router = express.Router();
 
 var searchUrl = "api.brewerydb.com/v2/search?";
 
-router.get("/index", function(req,res){
+router.get("/", function(req,res){
 	if (!req.session.user) {
 		res.redirect('/');
 	} else {
