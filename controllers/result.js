@@ -18,7 +18,7 @@ router.get('/', function(req,res){
 				res.render('results/index', {products: data.data, q: query});
 			} else {
 				req.flash('danger', 'Sorry, we couldn\'t find that beer. Please try again.')
-				res.redirect('/search/index');
+				res.redirect('/search');
 			}
 		});
 	} else {
