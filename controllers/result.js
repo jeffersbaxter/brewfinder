@@ -13,9 +13,9 @@ router.get('/', function(req,res){
 	if (req.session.user) {
 		request(searchUrl+"q="+query+"&type=beer&key="+process.env.API_KEY, function(err, response, body){
 		// request(searchUrl+"q="+query+"&key="+process.env.API_KEY, function(err, response, body){
-			var data = JSON.parse(body);
-			if (data.data) {
-				res.render('results/index', {products: data.data, q: query});
+			var beerData = JSON.parse(body);
+			if (beerData.data) {
+				res.render('results/index', {products: beerData.data, q: query});
 			} else {
 				req.flash('danger', 'Sorry, we couldn\'t find that beer. Please try again.')
 				res.redirect('/search');
