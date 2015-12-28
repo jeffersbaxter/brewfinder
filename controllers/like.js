@@ -28,6 +28,26 @@ router.post("/", function(req,res){
 	})
 });
 
+router.get("/:id", function(req,res){
+	var id = req.params.id;
+	console.log(id);
+	db.like.findById(req.params.id).then(function(like){
+		res.render("likes/show", {like: like});
+	})
+});
+
+router.delete("/:id", function(req,res){
+	db.like.destroy({
+		where: {
+			id: req.params.id
+		}
+	}).then(function(){
+		res.send({'msg': 'success'});
+	}).catch(function(e){
+		res.send({'msg': 'error', 'error': e});
+	});
+})
+
 
 
 

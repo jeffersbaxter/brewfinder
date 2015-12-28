@@ -5,13 +5,8 @@
 	<div class="well well-sm row likes">
 			<h1><%= like.name %></h1>
 
-			<a href="" class="btn btn-danger pull-right delete-btn">Remove</a>
-<!-- 		<form action="" method="POST">
+			<a href="<%= '/likes/'+like.id %>" class="btn btn-danger pull-right delete-btn">Remove</a>
 
-
-			<input type="submit" class="btn btn-info pull-right" id="" value="Add a comment">
-
-		</form> -->
 	</div>
 	
 	<% }); %>
