@@ -1,6 +1,12 @@
-<h1><%= like.name %></h1>
-
-<a href="/likes/<%= like.id %>" id="delete_like">Delete</a>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="well">
+			<p>Are you sure you want to remove <strong><%= like.name %></strong> from your archive.</p>
+			<a href="/likes/<%= like.id %>" class="btn btn-danger" id="delete_like">Yes</a>
+			<a href="/likes" class="btn btn-danger">No</a>
+		</div>
+	</div>
+</div>
 
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
